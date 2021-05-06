@@ -1,11 +1,13 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Text, TouchableOpacity } from "react-native";
+
 import colors from "../config/colors";
+import fontSizes from "../config/fontSizes";
 
 function StartUpScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>Squamish Bouldering</Text>
+      <Text style={styles.title}>Squamish Bouldering</Text>
       <TouchableOpacity
         style={styles.start_btn}
         onPress={() => navigation.push("Home")}
@@ -22,8 +24,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     alignItems: "center",
   },
-  header: {
-    fontSize: 48,
+  title: {
+    fontSize: fontSizes.start_up_title,
     top: "10%",
     textAlign: "center",
   },
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
   },
   start_btn_text: {
     color: colors.start_btn_text,
-    fontSize: 30,
+    fontSize: fontSizes.start_btn_text,
   },
 });
 
