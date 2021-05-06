@@ -2,17 +2,24 @@ import colors from "./colors";
 import fontSizes from "./fontSizes";
 
 export default {
-  options: {
-    backgroundColor: colors.secondary,
+  options_expand: {
+    backgroundColor: colors.options_buttons,
     width: "90%",
-    height: "8%",
+    height: "20%",
     alignItems: "center",
-    marginVertical: "2%",
+    borderRadius: 10,
+    flexDirection: "row",
+  },
+  options_compress: {
+    backgroundColor: colors.options_buttons,
+    width: "90%",
+    height: "100%",
+    alignItems: "center",
     borderRadius: 10,
     flexDirection: "row",
   },
   options_text: {
-    color: "white",
+    color: "black",
     paddingLeft: "5%",
     fontSize: fontSizes.options_text,
     flex: 1,
