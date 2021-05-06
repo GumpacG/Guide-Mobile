@@ -1,8 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 
 import colors from "../config/colors";
 import buttons from "../config/buttons";
+import ArrowDown from "../icons/ArrowDown.png";
 
 function HomeScreen() {
   return <SafeAreaView style={styles.container}>{getOptions()}</SafeAreaView>;
@@ -19,6 +26,11 @@ function getOptions() {
         // onPress={() => navigation.push("Home")}
       >
         <Text style={buttons.options_text}>{option}</Text>
+        <Image
+          resizeMode="contain"
+          style={buttons.options_arrow}
+          source={ArrowDown}
+        />
       </TouchableOpacity>
     );
   });
