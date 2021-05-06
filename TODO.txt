@@ -2,8 +2,9 @@ Done    Refactor screen stacks and change time to be white
         Add option list to home screen with dropdown for Areas 
 Done        - Create list 
 Done        - Make areas a dropdown
-            - Display areas in dropdown
+Done        - Display areas in dropdown
             - Dropdown items onclick navigate to <area> page
+            - Migrate all data to one file
             - Make lists scrollable (issue with touch trigger)
         Add option list to <area> page
             - Create list 

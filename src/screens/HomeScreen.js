@@ -5,7 +5,11 @@ import colors from "../config/colors";
 import OptionsListItem from "../components/OptionsListItem";
 
 function HomeScreen() {
-  return <SafeAreaView style={styles.container}>{getOptions()}</SafeAreaView>;
+  return (
+    // <ScrollView>
+    <SafeAreaView style={styles.container}>{getOptions()}</SafeAreaView>
+    // </ScrollView>
+  );
 }
 
 function getOptions() {
