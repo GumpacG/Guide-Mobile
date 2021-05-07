@@ -13,6 +13,7 @@ import arrowUpImg from "../icons/ArrowUp.png";
 import DropDownItem from "../components/DropDownItem";
 import colors from "../config/colors";
 import fontSizes from "../config/fontSizes";
+import data from "../data";
 
 // Main options for the screens
 export default class OptionsList extends Component {
@@ -26,26 +27,10 @@ export default class OptionsList extends Component {
 
   // Helper function for mapping over the dropdown list
   getDropDownList() {
-    // TODO: Migrate to a different file
-    const items = [
-      "Porteau Cove",
-      "Furry Creek",
-      "Murrin Park",
-      "Shannon Falls",
-      "The Grand Wall",
-      "Apron Boulders",
-      "The North Walls",
-      "Smoke Bluffs",
-      "Coho Park",
-      "The Powerlines",
-      "Cat Lake",
-      "Paradise Valley",
-      "Whistler Creekside Boulder",
-      "Green River Baston",
-      "Other Areas",
-    ];
-    return items.map((item) => (
-      <DropDownItem navigation={this.props.navigation} item={item} key={item} />
+    const items = this.state.option === "Areas" ? data.areas : data.lists;
+
+    return items.map((area) => (
+      <DropDownItem navigation={this.props.navigation} item={area} key={area} />
     ));
   }
 
@@ -65,20 +50,24 @@ export default class OptionsList extends Component {
               : styles.options_compress
           }
           onPress={() => {
-            this.setState({ expanded: !this.state.expanded });
+            // Only expand for Areas and List
+            if (this.state.option === "Areas" || this.state.option === "Lists")
+              this.setState({ expanded: !this.state.expanded });
           }}
         >
           <Text style={styles.options_text}>{this.state.option}</Text>
-          <Image
-            resizeMode="contain"
-            style={styles.options_arrow}
-            source={this.state.expanded ? arrowUpImg : arrowDownImg}
-          />
+          {this.state.option === "Areas" || this.state.option === "Lists" ? (
+            // Only show arrows for Areas and Lists since they are the only dropdown lists
+            <Image
+              resizeMode="contain"
+              style={styles.options_arrow}
+              source={this.state.expanded ? arrowUpImg : arrowDownImg}
+            />
+          ) : null}
         </TouchableOpacity>
+
         <ScrollView>
-          {this.state.expanded && this.state.option === "Areas"
-            ? this.getDropDownList()
-            : null}
+          {this.state.expanded ? this.getDropDownList() : null}
         </ScrollView>
       </View>
     );

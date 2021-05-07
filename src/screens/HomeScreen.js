@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 
 import colors from "../config/colors";
+import data from "../data";
 import OptionsListItem from "../components/OptionsListItem";
 
 // The screen users immediately see after the start up screen
@@ -15,7 +16,7 @@ function HomeScreen({ navigation }) {
 
 // Helper function to map over the main options in the current screen
 function getOptions(navigation) {
-  const options = ["Lists", "Areas", "Projects", "Sends"];
+  const options = data.options;
 
   return options.map((option) => {
     return (

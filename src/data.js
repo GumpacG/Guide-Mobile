@@ -1,0 +1,21 @@
+export default {
+  options: ["Lists", "Areas", "Projects", "Sends"],
+  areas: [
+    "Porteau Cove",
+    "Furry Creek",
+    "Murrin Park",
+    "Shannon Falls",
+    "The Grand Wall",
+    "Apron Boulders",
+    "The North Walls",
+    "Smoke Bluffs",
+    "Coho Park",
+    "The Powerlines",
+    "Cat Lake",
+    "Paradise Valley",
+    "Whistler Creekside Boulder",
+    "Green River Baston",
+    "Other Areas",
+  ],
+  lists: ["Top 100 Problems", "Top 25 Highballs"],
+};
