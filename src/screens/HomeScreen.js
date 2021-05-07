@@ -1,22 +1,26 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 
 import colors from "../config/colors";
 import OptionsListItem from "../components/OptionsListItem";
 
-function HomeScreen() {
+// The screen users immediately see after the start up screen
+function HomeScreen({ navigation }) {
   return (
-    // <ScrollView>
-    <SafeAreaView style={styles.container}>{getOptions()}</SafeAreaView>
-    // </ScrollView>
+    <SafeAreaView style={styles.container}>
+      {getOptions(navigation)}
+    </SafeAreaView>
   );
 }
 
-function getOptions() {
+// Helper function to map over the main options in the current screen
+function getOptions(navigation) {
   const options = ["Lists", "Areas", "Projects", "Sends"];
 
   return options.map((option) => {
-    return <OptionsListItem option={option} key={option} />;
+    return (
+      <OptionsListItem navigation={navigation} option={option} key={option} />
+    );
   });
 }
 

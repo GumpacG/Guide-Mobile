@@ -14,6 +14,7 @@ import DropDownItem from "../components/DropDownItem";
 import colors from "../config/colors";
 import fontSizes from "../config/fontSizes";
 
+// Main options for the screens
 export default class OptionsList extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,9 @@ export default class OptionsList extends Component {
     };
   }
 
+  // Helper function for mapping over the dropdown list
   getDropDownList() {
+    // TODO: Migrate to a different file
     const items = [
       "Porteau Cove",
       "Furry Creek",
@@ -41,7 +44,9 @@ export default class OptionsList extends Component {
       "Green River Baston",
       "Other Areas",
     ];
-    return items.map((item) => <DropDownItem item={item} key={item} />);
+    return items.map((item) => (
+      <DropDownItem navigation={this.props.navigation} item={item} key={item} />
+    ));
   }
 
   render() {

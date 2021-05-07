@@ -4,4 +4,5 @@ export default {
   navigation_text_header: "#fff",
   start_btn_text: "#fff",
   options_buttons: "#b7b7a4",
+  dropdown_list_text: "#d6cfcb",
 };

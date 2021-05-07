@@ -3,7 +3,7 @@ Done    Refactor screen stacks and change time to be white
 Done        - Create list 
 Done        - Make areas a dropdown
 Done        - Display areas in dropdown
-            - Dropdown items onclick navigate to <area> page
+Done        - Dropdown items onclick navigate to <area> page
             - Migrate all data to one file
             - Make lists scrollable (issue with touch trigger)
         Add option list to <area> page

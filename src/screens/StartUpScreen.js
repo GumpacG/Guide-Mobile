@@ -4,6 +4,7 @@ import { StyleSheet, SafeAreaView, Text, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
 import fontSizes from "../config/fontSizes";
 
+// Initial screen when user opens the app
 function StartUpScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
