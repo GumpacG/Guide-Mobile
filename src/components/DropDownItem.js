@@ -10,6 +10,7 @@ export default class DropDownItem extends Component {
     super(props);
     this.state = {
       item: this.props.item,
+      option: this.props.option,
     };
   }
 
@@ -18,7 +19,13 @@ export default class DropDownItem extends Component {
       <TouchableOpacity
         style={styles.items}
         onPress={() => {
-          this.props.navigation.navigate("Area", { area: this.state.item });
+          if (this.state.option === "Areas") {
+            this.props.navigation.navigate("Area", { area: this.state.item });
+          } else if (this.state.option === "Sub-Areas") {
+            this.props.navigation.navigate("Sub-Area", {
+              area: this.state.item,
+            });
+          }
         }}
       >
         <Text style={styles.item_text}> {this.state.item} </Text>

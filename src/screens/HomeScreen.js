@@ -16,7 +16,7 @@ function HomeScreen({ navigation }) {
 
 // Helper function to map over the main options in the current screen
 function getOptions(navigation) {
-  const options = data.options;
+  const options = data.homeOptions;
 
   return options.map((option) => {
     return (

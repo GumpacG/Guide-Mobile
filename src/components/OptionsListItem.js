@@ -21,16 +21,28 @@ export default class OptionsList extends Component {
     super(props);
     this.state = {
       option: this.props.option,
+      area: this.props.area,
       expanded: false,
     };
   }
 
   // Helper function for mapping over the dropdown list
   getDropDownList() {
-    const items = this.state.option === "Areas" ? data.areas : data.lists;
+    let items = data[this.state.option];
+
+    if (this.state.option === "Areas" || this.state.option === "Lists") {
+      items = data[this.state.option];
+    } else if (this.state.option === "Sub-Areas") {
+      items = data[this.state.option][this.state.area];
+    }
 
     return items.map((area) => (
-      <DropDownItem navigation={this.props.navigation} item={area} key={area} />
+      <DropDownItem
+        navigation={this.props.navigation}
+        item={area}
+        key={area}
+        option={this.state.option}
+      />
     ));
   }
 
@@ -51,12 +63,18 @@ export default class OptionsList extends Component {
           }
           onPress={() => {
             // Only expand for Areas and List
-            if (this.state.option === "Areas" || this.state.option === "Lists")
+            if (
+              this.state.option === "Areas" ||
+              this.state.option === "Lists" ||
+              this.state.option === "Sub-Areas"
+            )
               this.setState({ expanded: !this.state.expanded });
           }}
         >
           <Text style={styles.options_text}>{this.state.option}</Text>
-          {this.state.option === "Areas" || this.state.option === "Lists" ? (
+          {this.state.option === "Areas" ||
+          this.state.option === "Lists" ||
+          this.state.option === "Sub-Areas" ? (
             // Only show arrows for Areas and Lists since they are the only dropdown lists
             <Image
               resizeMode="contain"

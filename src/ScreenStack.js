@@ -6,6 +6,7 @@ import StartUpScreen from "./screens/StartUpScreen";
 import HomeScreen from "./screens/HomeScreen";
 import colors from "./config/colors";
 import AreaScreen from "./screens/AreaScreen";
+import SubAreaScreen from "./screens/SubAreaScreen";
 
 export default function getScreenStack() {
   const Stack = createStackNavigator();
@@ -14,6 +15,7 @@ export default function getScreenStack() {
       screenOptions={{
         headerStyle: { backgroundColor: colors.secondary },
         headerTintColor: colors.navigation_text_header,
+        headerBackTitleVisible: false,
       }}
     >
       <Stack.Screen
@@ -31,6 +33,11 @@ export default function getScreenStack() {
       <Stack.Screen
         name="Area"
         component={AreaScreen}
+        options={({ route }) => ({ title: route.params.area })}
+      />
+      <Stack.Screen
+        name="Sub-Area"
+        component={SubAreaScreen}
         options={({ route }) => ({ title: route.params.area })}
       />
     </Stack.Navigator>
