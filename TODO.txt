@@ -1,14 +1,11 @@
 TODO: 
-        Add the Introduction screen for the area
-            - Add image
-Done        - Add the introduction
-        Add the Introduction screen for the sub area
-            - Add image
-            - Add the introduction
-        Add the Map screen for the <area>
+        Add the Location screen for the <area>
             - Include Google maps
             - Include approach instructions
             - Include topography map
+        Add the Introduction screen for the sub area
+            - Add image
+            - Add the introduction
         Add the Map screen for the <sub area>
             - Include Google maps
             - Include approach instructions
@@ -37,3 +34,6 @@ Add option list to <area> page
     - Display sub-areas in dropdown
     - Fill in data sub areas for "The Grand Wall"
     - Dropdown items onclick navigate to <sub-area> page
+Add the Introduction screen for the area
+    - Add image
+    - Add the introduction

@@ -3,4 +3,5 @@ export default {
   start_up_title: 48,
   options_text: 24,
   dropdown_item: 18,
+  introduction_text: 20,
 };
