@@ -1,4 +1,10 @@
 TODO: 
+        Add the Introduction screen for the area
+            - Add image
+Done        - Add the introduction
+        Add the Introduction screen for the sub area
+            - Add image
+            - Add the introduction
         Add the Map screen for the <area>
             - Include Google maps
             - Include approach instructions
@@ -7,12 +13,8 @@ TODO:
             - Include Google maps
             - Include approach instructions
             - Include topography map
-        Add the Introduction screen for the area
-            - Add image
-            - Add the introduction
-        Add the Introduction screen for the sub area
-            - Add image
-            - Add the introduction
+        Add climbs page
+        Add list page (Top 100)
         Fill in data for sub areas
         Fill in data for all climbs
 

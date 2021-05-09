@@ -23,6 +23,7 @@ export default class OptionsList extends Component {
       option: this.props.option,
       area: this.props.area,
       expanded: false,
+      navigation: this.props.navigation,
     };
   }
 
@@ -38,13 +39,26 @@ export default class OptionsList extends Component {
 
     return items.map((area) => (
       <DropDownItem
-        navigation={this.props.navigation}
+        navigation={this.state.navigation}
         item={area}
         key={area}
         option={this.state.option}
       />
     ));
   }
+
+  onPressHandler = () => {
+    // Only expand for Areas and List
+    if (
+      this.state.option === "Areas" ||
+      this.state.option === "Lists" ||
+      this.state.option === "Sub-Areas"
+    ) {
+      this.setState({ expanded: !this.state.expanded });
+    } else if (this.state.option === "Introduction") {
+      this.state.navigation.navigate("Introduction", { area: this.state.area });
+    }
+  };
 
   render() {
     return (
@@ -61,15 +75,7 @@ export default class OptionsList extends Component {
               ? styles.options_expand
               : styles.options_compress
           }
-          onPress={() => {
-            // Only expand for Areas and List
-            if (
-              this.state.option === "Areas" ||
-              this.state.option === "Lists" ||
-              this.state.option === "Sub-Areas"
-            )
-              this.setState({ expanded: !this.state.expanded });
-          }}
+          onPress={this.onPressHandler}
         >
           <Text style={styles.options_text}>{this.state.option}</Text>
           {this.state.option === "Areas" ||
