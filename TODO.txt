@@ -1,6 +1,6 @@
 TODO: 
         Add the Location screen for the <area>
-            - Include Google maps
+Done        - Include maps
             - Include approach instructions
             - Move data to data file
         Add topography screen for area
