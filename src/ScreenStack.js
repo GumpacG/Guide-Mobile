@@ -2,12 +2,13 @@ import "react-native-gesture-handler";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import colors from "./config/colors";
 import StartUpScreen from "./screens/StartUpScreen";
 import HomeScreen from "./screens/HomeScreen";
-import colors from "./config/colors";
 import AreaScreen from "./screens/AreaScreen";
 import SubAreaScreen from "./screens/SubAreaScreen";
-import Introduction from "./screens/IntroductionScreen";
+import IntroductionScreen from "./screens/IntroductionScreen";
+import LocationScreen from "./screens/LocationScreen";
 
 export default function getScreenStack() {
   const Stack = createStackNavigator();
@@ -43,7 +44,12 @@ export default function getScreenStack() {
       />
       <Stack.Screen
         name="Introduction"
-        component={Introduction}
+        component={IntroductionScreen}
+        options={({ route }) => ({ title: route.params.area })}
+      />
+      <Stack.Screen
+        name="Location"
+        component={LocationScreen}
         options={({ route }) => ({ title: route.params.area })}
       />
     </Stack.Navigator>

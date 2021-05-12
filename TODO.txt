@@ -2,7 +2,13 @@ TODO:
         Add the Location screen for the <area>
             - Include Google maps
             - Include approach instructions
+            - Move data to data file
+        Add topography screen for area
             - Include topography map
+            - Make topography map interactable with svg images of numbers 
+            - List under the topo map of the sub areas
+            - Make the list scrollable where the selected sub area is highlighted in the map
+            - Have an button for selected sub area to link to the sub area page
         Add the Introduction screen for the sub area
             - Add image
             - Add the introduction

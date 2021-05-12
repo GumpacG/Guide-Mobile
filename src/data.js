@@ -1,6 +1,6 @@
 export default {
-  homeOptions: ["Lists", "Areas", "Projects", "Sends"],
-  areaOptions: ["Introduction", "Location", "Sub-Areas", "Projects", "Sends"],
+  homeOptions: ["Lists", "Areas"], // "Projects", "Sends"],
+  areaOptions: ["Introduction", "Location", "Sub-Areas"], // "Projects", "Sends"],
   Areas: [
     // "Porteau Cove",
     // "Furry Creek",

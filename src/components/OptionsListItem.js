@@ -55,8 +55,10 @@ export default class OptionsList extends Component {
       this.state.option === "Sub-Areas"
     ) {
       this.setState({ expanded: !this.state.expanded });
-    } else if (this.state.option === "Introduction") {
-      this.state.navigation.navigate("Introduction", { area: this.state.area });
+    } else {
+      this.state.navigation.navigate(this.state.option, {
+        area: this.state.area,
+      });
     }
   };
 
